@@ -38,11 +38,10 @@ class PostBuilderImpl implements PostBuilder{
         return $this;
     }
 
-    public function getPost(): Post{
+    public function getPost(){
         echo (gettype($this->post));
         $result = $this->post;
         $this->post = $this->create();
         return $result;
     }
-
 }

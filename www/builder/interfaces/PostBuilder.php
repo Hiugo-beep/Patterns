@@ -9,5 +9,5 @@ interface PostBuilder {
     public function setCategoriesPost(array $val): PostBuilder;
     public function setTagsPost(array $val): PostBuilder;
 
-    public function getPost(): Post;
+    public function getPost();
 }

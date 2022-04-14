@@ -15,7 +15,7 @@ class PostBuilderManager{
         return $post = $this->builder->getPost();
     }
 
-    public function createPostIT():Post {
+    public function createPostIT(){
         return $post = $this->builder
             ->setTitlePost('Новый IT пост')
             ->setBodyPost('Какое клевое содрежание у этой статьи')
