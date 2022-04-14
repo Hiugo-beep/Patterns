@@ -843,3 +843,18 @@
 2022/04/13 19:24:18 [notice] 1#1: signal 17 (SIGCHLD) received from 29
 2022/04/13 19:24:18 [notice] 1#1: worker process 29 exited with code 0
 2022/04/13 19:24:18 [notice] 1#1: exit
+2022/04/14 12:53:15 [notice] 1#1: using the "epoll" event method
+2022/04/14 12:53:15 [notice] 1#1: nginx/1.21.6
+2022/04/14 12:53:15 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/04/14 12:53:15 [notice] 1#1: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2022/04/14 12:53:15 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/04/14 12:53:15 [notice] 1#1: start worker processes
+2022/04/14 12:53:15 [notice] 1#1: start worker process 22
+2022/04/14 12:53:15 [notice] 1#1: start worker process 23
+2022/04/14 12:53:15 [notice] 1#1: start worker process 24
+2022/04/14 12:53:15 [notice] 1#1: start worker process 25
+2022/04/14 12:53:15 [notice] 1#1: start worker process 26
+2022/04/14 12:53:15 [notice] 1#1: start worker process 27
+2022/04/14 12:53:15 [notice] 1#1: start worker process 28
+2022/04/14 12:53:15 [notice] 1#1: start worker process 29
+2022/04/14 13:07:07 [error] 22#22: *1 open() "/var/www/favicon.ico" failed (2: No such file or directory), client: 172.19.0.1, server: patterncontroller, request: "GET /favicon.ico HTTP/1.1", host: "localhost:81", referrer: "http://localhost:81/"
