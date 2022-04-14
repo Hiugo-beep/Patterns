@@ -18,7 +18,7 @@ class PostBuilderManager{
     public function createPostIT():Post {
         return $post = $this->builder
             ->setTitlePost('Новый IT пост')
-            ->setBlogPost('Какое клевое содрежание у этой статьи')
+            ->setBodyPost('Какое клевое содрежание у этой статьи')
             ->setAuthorPost('Какой-то IT блогер')
             ->setCategoriesPost([
                 'IT project post',
@@ -33,7 +33,7 @@ class PostBuilderManager{
     public function createPostCats() :Post {
         return $post = $this->builder
             ->setTitlePost('Новая статья про котов')
-            ->setBlogPost('Новая информация о поглаживании котов')
+            ->setBodyPost('Новая информация о поглаживании котов')
             ->setAuthorPost('Какой-то любитель котиков')
             ->setCategoriesPost([
                 'animals',

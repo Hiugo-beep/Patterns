@@ -857,3 +857,4 @@
 2022/04/14 12:53:15 [notice] 1#1: start worker process 27
 2022/04/14 12:53:15 [notice] 1#1: start worker process 28
 2022/04/14 12:53:15 [notice] 1#1: start worker process 29
+2022/04/14 13:07:07 [error] 22#22: *1 open() "/var/www/favicon.ico" failed (2: No such file or directory), client: 172.19.0.1, server: patterncontroller, request: "GET /favicon.ico HTTP/1.1", host: "localhost:81", referrer: "http://localhost:81/"

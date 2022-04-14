@@ -5,23 +5,23 @@ class Post{
     /*
      * @var string
      */
-    private $title;
+    public $title;
     /*
      * @var string
      */
-    private $body;
+    public $body;
     /*
      * @var string
      */
-    private $author;
+    public $author;
     /*
      * @var array
      */
-    private $tags = [];
+    public $tags = [];
     /*
      * @var array
      */
-    private $categories = [];
+    public $categories = [];
 
     /*
     public function __construct($title, $body, $author, $tags, $categories) {
@@ -33,8 +33,9 @@ class Post{
     }
     */
 
-    public function setTitle(string $title) {
+    public function setTitle(string $title): Post {
         $this->title = $title;
+        return $this;
     }
     public function getTitle() :string{
         return $this->title;
