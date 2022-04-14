@@ -1,6 +1,8 @@
 <?php
+include ('builder/AutoloaderBuilder.php');
 
-function Builder(){
+##  http://localhost:81/
 
+$controller = new PatternsController();
 
-}
+$controller->useBuilder();
