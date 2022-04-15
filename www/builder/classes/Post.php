@@ -5,23 +5,23 @@ class Post{
     /*
      * @var string
      */
-    public $title;
+    private $title;
     /*
      * @var string
      */
-    public $body;
+    private $body;
     /*
      * @var string
      */
-    public $author;
+    private $author;
     /*
      * @var array
      */
-    public $tags = [];
+    private $tags = [];
     /*
      * @var array
      */
-    public $categories = [];
+    private $categories = [];
 
     /*
     public function __construct($title, $body, $author, $tags, $categories) {
