@@ -19,4 +19,29 @@ class PatternsController{
 
 
     }
+
+    public function useObserver(){
+        $news = new News();
+        $subscriber = new Subscriber();
+
+        $news->addObserver($subscriber);
+
+
+        $news->updatePost("Только что пропала собака");
+        $news->updatePost("Только что собака нашлась");
+        $news->updatePost("Только что собака вернулась к своим хозяевам");
+
+
+        $news->removeObserver($subscriber);
+
+        $news->updatePost("Только что пропала собака");
+        $news->updatePost("Только что собака нашлась");
+        $news->updatePost("Только что собака вернулась к своим хозяевам");
+
+        $news->addObserver($subscriber);
+
+        $news->updatePost("Только что пропала кошка");
+        $news->updatePost("Только что кошка нашлась");
+        $news->updatePost("Только что кошка вернулась к своим хозяевам");
+    }
 }
