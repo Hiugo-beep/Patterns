@@ -30,7 +30,7 @@ class PostBuilderManager{
             ->getPost();
     }
 
-    public function createPostCats() :Post {
+    public function createPostCats() {
         return $post = $this->builder
             ->setTitlePost('Новая статья про котов')
             ->setBodyPost('Новая информация о поглаживании котов')

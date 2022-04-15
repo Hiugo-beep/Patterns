@@ -13,7 +13,7 @@ services:
     volumes:
       - ./hosts:/etc/nginx/conf.d
       - ./www:/var/www
-      - ./logs:/var/log/nginx
+      - ./logs/nginx:/var/log/nginx
     # nginx должен общаться с php контейнером
     links:
       - php
@@ -24,3 +24,4 @@ services:
     # монтируем директорию с проектами
     volumes:
       - ./www:/var/www
+      - ./logs/php-fpm:/var/log
