@@ -11,10 +11,10 @@ class PostBuilderImpl implements PostBuilder
         $this->create();
     }
 
-    public function create(): PostBuilder
+    public function create(): Post
     {
         $this->post = new Post();
-        return $this;
+        return $this->post;
     }
 
     public function setTitlePost(string $val): PostBuilder
@@ -51,9 +51,8 @@ class PostBuilderImpl implements PostBuilder
         return $this;
     }
 
-    public function getPost()
+    public function getPost() :Post
     {
-        echo(gettype($this->post));
         $result = $this->post;
         $this->post = $this->create();
         return $result;

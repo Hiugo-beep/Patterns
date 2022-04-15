@@ -33,9 +33,8 @@ class Post{
     }
     */
 
-    public function setTitle(string $title): Post {
+    public function setTitle(string $title) {
         $this->title = $title;
-        return $this;
     }
     public function getTitle() :string{
         return $this->title;
