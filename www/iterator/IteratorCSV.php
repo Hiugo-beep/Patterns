@@ -1,6 +1,7 @@
 <?php
 
-class IteratorCVS implements Iterator {
+class IteratorCSV implements Iterator
+{
 
     const ROW_SIZE = 4096;
     protected $filePointer = null;
@@ -8,12 +9,13 @@ class IteratorCVS implements Iterator {
     protected $rowCounter = null;
     protected $delimiter = null;
 
-    public function __construct( $file, $delimeter = ','){
-        try{
+    public function __construct($file, $delimeter = ',')
+    {
+        try {
             $this->filePointer = fopen($file, 'rb');
             $this->delimiter = $delimeter;
 
-        }catch (Exception $e){
+        } catch (Exception $e) {
             throw new Exception('The file "' . $file . '" cannot be read.');
         }
     }
@@ -26,9 +28,9 @@ class IteratorCVS implements Iterator {
         return $this->currentElement;
     }
 
-    public function next():bool
+    public function next(): bool
     {
-        if(is_resource($this->filePointer)){
+        if (is_resource($this->filePointer)) {
             return !feof($this->filePointer);
         }
 
@@ -41,10 +43,10 @@ class IteratorCVS implements Iterator {
     }
 
     //проверяет, является ли следующая строчка допустимой или нет
-    public function valid():bool
+    public function valid(): bool
     {
-        if(!$this-> next()){
-            if(is_resource($this->filePointer)){
+        if (!$this->next()) {
+            if (is_resource($this->filePointer)) {
                 fclose($this->filePointer);
             }
             return false;
