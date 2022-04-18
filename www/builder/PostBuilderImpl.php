@@ -25,29 +25,25 @@ class PostBuilderImpl implements PostBuilder
 
     public function setBodyPost(string $val): PostBuilder
     {
-        #$this->post->setBody($val);
-        $this->post->body = $val;
+        $this->post->setBody($val);
         return $this;
     }
 
     public function setAuthorPost(string $val): PostBuilder
     {
-        #$this->post->setAuthor($val);
-        $this->post->author = $val;
+        $this->post->setAuthor($val);
         return $this;
     }
 
     public function setCategoriesPost(array $val): PostBuilder
     {
-        #$this->post->setCategories($val);
-        $this->post->categories = $val;
+        $this->post->setCategories($val);
         return $this;
     }
 
     public function setTagsPost(array $val): PostBuilder
     {
-        $this->post->tags = $val;
-        #$this->post->setTags($val);
+        $this->post->setTags($val);
         return $this;
     }
 
