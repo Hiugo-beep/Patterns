@@ -1,6 +1,7 @@
 <?php
 
-class AutoloaderBuilder
+
+class AutoloaderFactory
 {
     public static function register()
     {
@@ -10,13 +11,10 @@ class AutoloaderBuilder
             $isAdded = self::addFile($className);
             if ($isAdded) return true;
 
-            $isAdded = self::addFile('builder' . DIRECTORY_SEPARATOR . $className);
+            $isAdded = self::addFile('factory' . DIRECTORY_SEPARATOR . $className);
             if ($isAdded) return true;
 
-            $isAdded = self::addFile('builder' . DIRECTORY_SEPARATOR . 'interfaces' . DIRECTORY_SEPARATOR . $className);
-            if ($isAdded) return true;
-
-            $isAdded = self::addFile('builder' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . $className);
+            $isAdded = self::addFile('factory' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . $className);
             if ($isAdded) return true;
 
             return false;
@@ -33,4 +31,4 @@ class AutoloaderBuilder
     }
 }
 
-AutoloaderBuilder::register();
+AutoloaderFactory::register();
