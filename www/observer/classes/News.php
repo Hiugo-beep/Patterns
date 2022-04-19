@@ -6,11 +6,14 @@ class News implements Observable
     protected $observer;
 
 
-    public function updatePost(string $content){
+    public function updatePost(string $content)
+    {
         $this->post[] = $content;
         $this->notifyObservers();
     }
-    public function showLastPost(){
+
+    public function showLastPost()
+    {
         echo array_slice($this->post, -1)[0];
     }
 
@@ -22,13 +25,13 @@ class News implements Observable
 
     public function removeObserver(Observer $observer)
     {
-        $key = array_search( $observer, $this->observer);
+        $key = array_search($observer, $this->observer);
         unset($this->observer[$key]);
     }
 
     public function notifyObservers()
     {
-        foreach ($this->observer as &$val) {
+        foreach ($this->observer as $val) {
             $val->handleEvent($this);
         }
     }

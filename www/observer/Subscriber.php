@@ -1,18 +1,24 @@
 <?php
 
-class Subscriber implements Observer{
+class Subscriber implements Observer
+{
 
 
-    public function __construct(){}
+    public function __construct()
+    {
+    }
 
-    public function handleEvent(Observable $observable){
+    public function handleEvent(Observable $observable)
+    {
         $this->reactToNews($observable);
     }
-    public function reactToNews(Observable $observable){
+
+    private function reactToNews(Observable $observable)
+    {
         echo "I just read the new posts <br>";
-        if(!empty($observable)){
+        if (!empty($observable)) {
             $observable->showLastPost();
         }
-        echo  " <br><br>";
+        echo " <br><br>";
     }
 }
