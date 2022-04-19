@@ -1,9 +1,49 @@
 <?php
 
 
-class PatternsController{
+class PatternsController
+{
 
-    public function useBuilder(){
+
+    public function useFactory()
+    {
+        $role = 'User';
+
+        /*switch ($role) {
+            case 'Admin':
+                $login = new Admin();
+                break;
+            case 'Moderator':
+                $login = new Moderator();
+                break;
+            case 'User':
+                $login = new User();
+                break;
+            case 'Guest':
+                $login = new Guest();
+                break;
+            default:
+                break;
+        }
+
+        var_dump($login);
+        */
+        $login = Factory::createUsers($role);
+        var_dump($login);
+    }
+
+    public function useSingleton()
+    {
+        #var_dump(Singleton::getSingle());
+        $temp = Singleton::getSingle();
+        $temp->setSum(5);
+
+        $temp2 = Singleton::getSingle();
+        echo $temp2->getSum();
+    }
+
+    public function useBuilder()
+    {
         $name = 'Строитель (Builder)';
         $description = PostBuilderManager::getDescription();
 
@@ -20,7 +60,8 @@ class PatternsController{
 
     }
 
-    public function useObserver(){
+    public function useObserver()
+    {
         $news = new News();
         $subscriber = new Subscriber();
 
@@ -44,4 +85,20 @@ class PatternsController{
         $news->updatePost("Только что кошка нашлась");
         $news->updatePost("Только что кошка вернулась к своим хозяевам");
     }
+
+    public function useIterator()
+    {
+        $csv = new IteratorCSV(__DIR__ . '/resources/cats.csv');
+
+        foreach ($csv as $key => $row) {
+            print_r($row);
+        }
+    }
+
+    public function useFacade()
+    {
+        $facade = new YouTubeDownloader("APIKEY-XXXXXXXXX");
+        $facade->downloadVideo("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    }
+
 }
