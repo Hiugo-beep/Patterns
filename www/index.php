@@ -5,6 +5,7 @@ include('iterator/AutoloaderIterator.php');
 include('facade/AutoloaderFacade.php');
 include('factory/AutoloaderFactory.php');
 include('singleton/Singleton.php');
+include('decorator/AutoloaderDecorator.php');
 
 ##  http://localhost:81/?command=
 
@@ -35,6 +36,10 @@ if (isset($_GET['command'])) {
         case "Factory":
             echo "Implement Factory:<br><br>";
             $controller->useFactory();
+            break;
+        case "Decorator":
+            echo "Implement Decorator:<br><br>";
+            $controller->useDecorator();
             break;
         default:
             $pathToFile = '/index.html';
