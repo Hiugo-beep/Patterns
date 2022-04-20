@@ -1,13 +1,7 @@
 <?php
-include('builder/AutoloaderBuilder.php');
-include('observer/AutoloaderObserver.php');
-include('iterator/AutoloaderIterator.php');
-include('facade/AutoloaderFacade.php');
-include('factory/AutoloaderFactory.php');
-include('singleton/Singleton.php');
-include('decorator/AutoloaderDecorator.php');
+include('autload.php');
 
-##  http://localhost:81/?command=
+##  http://localhost:81
 
 $controller = new PatternsController();
 
@@ -40,6 +34,22 @@ if (isset($_GET['command'])) {
         case "Decorator":
             echo "Implement Decorator:<br><br>";
             $controller->useDecorator();
+            break;
+        case "Proxy":
+            echo "Implement Proxy:<br><br>";
+            $controller->useProxy();
+            break;
+        case "S":
+            echo "Use Single Responsibility:<br><br>";
+            //$controller->useDecorator();
+            break;
+        case "O":
+            echo "Use Open/Closed Principle:<br><br>";
+            //$controller->useDecorator();
+            break;
+        case "L":
+            echo "Use  Principle:<br><br>";
+            //$controller->useDecorator();
             break;
         default:
             $pathToFile = '/index.html';

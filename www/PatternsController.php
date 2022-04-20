@@ -104,23 +104,30 @@ class PatternsController
 
     public function useDecorator()
     {
-        $dangerousComment = <<<HERE
-Hello! Nice blog post!
-Please visit my <a href='http://www.iwillhackyou.com'>homepage</a>.
-<script src="http://www.iwillhackyou.com/script.js">
-  performXSSAttack();
-</script>
+        $dangerousComment =
+            <<<HERE
+                Hello! Nice blog post!
+                Please visit my <a href='http://www.iwillhackyou.com'>homepage</a>.
+                <script src="http://www.iwillhackyou.com/script.js">
+                  performXSSAttack();
+                </script>
 HERE;
 
         $naiveInput = new TextInput();
         echo "Website renders comments without filtering (unsafe):\n";
-        echo $dangerousComment;
+        echo $naiveInput->formatText($dangerousComment);
+
         echo "\n\n\n";
 
         $filteredInput = new  DangerousHTMLTagsFilter($naiveInput);
         echo "Website renders comments after stripping all tags (safe):\n";
-        $dangerousComment = $filteredInput->formatText($dangerousComment);
-        echo $dangerousComment;
+        echo $filteredInput->formatText($dangerousComment);
+
         echo "\n\n\n";
+    }
+
+    public function useProxy()
+    {
+
     }
 }

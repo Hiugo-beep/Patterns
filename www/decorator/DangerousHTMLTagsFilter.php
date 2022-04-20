@@ -15,17 +15,7 @@ class DangerousHTMLTagsFilter extends TextFormat
     {
         $text = parent::formatText($text);
 
-        foreach ($this->dangerousTagPatterns as $pattern) {
-            $text = preg_replace($pattern, '', $text);
-        }
+        return strip_tags($text);
 
-        foreach ($this->dangerousAttributes as $attribute) {
-            $text = preg_replace_callback('|<(.*?)>|', function ($matches) use ($attribute) {
-                $result = preg_replace("|$attribute=|i", '', $matches[1]);
-                return "<" . $result . ">";
-            }, $text);
-        }
-
-        return $text;
     }
 }
